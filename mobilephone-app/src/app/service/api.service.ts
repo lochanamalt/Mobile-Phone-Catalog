@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
-import { MobilePhoneUser } from '../model/mobilephone-user';
+import { MobilePhone } from '../model/mobilephone';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
   private BASE_URL = 'http://localhost:8080';
-  private ALL_STORE_MODELS_URL = `${this.BASE_URL}/storemobile`;
+  private ALL_STORE_MODELS_URL = `${this.BASE_URL}/mobiles`;
 
   constructor(private http: HttpClient) { }
 
-  getAllStoreModels(): Observable<MobilePhoneUser[]>{
-    return this.http.get<MobilePhoneUser[]>(this.ALL_STORE_MODELS_URL);
+  getAllModels(): Observable<MobilePhone[]>{
+    return this.http.get<MobilePhone[]>(this.ALL_STORE_MODELS_URL);
   }
 }

@@ -28,7 +28,7 @@ public class MobilePhoneController {
         return mobilePhoneService.getMobilePhone(id);
     }
 
-    @GetMapping("/mobiles/{brand}")
+    @GetMapping("/mobiles/brand/{brand}")
     public List<MobilePhoneDTO> getAllModels(@PathVariable String brand){
         return mobilePhoneService.getMobilePhoneByBrand(brand);
     }
